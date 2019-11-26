@@ -1,7 +1,6 @@
 'use strict'
 
 const db = require('../server/db')
-const {green, red} = require('chalk')
 const User = require('../server/db/models/user')
 const Session = require('../server/db/models/session')
 const Question = require('../server/db/models/question')
@@ -278,7 +277,7 @@ const seed = async () => {
       return Question.create(question)
     })
   )
-  console.log(green('Seeding success!'))
+  console.log('Seeding success!')
 }
 
 // We've separated the `seed` function from the `runSeed` function.
@@ -289,7 +288,7 @@ async function runSeed() {
   try {
     await seed()
   } catch (err) {
-    console.error(red('Oh noes! Something went wrong!'))
+    console.error('Oh noes! Something went wrong!')
     console.error(err)
     process.exitCode = 1
   } finally {
