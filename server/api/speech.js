@@ -1,4 +1,6 @@
 const Hapi = require('@hapi/hapi')
+const fs = require('fs')
+const axios = require('axios')
 const speech = require('@google-cloud/speech')
 const ffmpeg = require('fluent-ffmpeg')
 
