@@ -2,9 +2,9 @@
 
 const db = require('../server/db')
 const {green, red} = require('chalk')
-const {User} = require('../server/db/models/user')
-const {Session} = require('../server/db/models/session')
-const {Question} = require('../server/db/models/question')
+const User = require('../server/db/models/user')
+const Session = require('../server/db/models/session')
+const Question = require('../server/db/models/question')
 
 const users = [
   {
@@ -71,54 +71,136 @@ const users = [
 
 const sessions = [
   {
-    date: 2019 - 11 - 25,
+    date: '2019-11-14 13:01:28.22-05',
     questionCount: 10,
-    likeWordCount: 1,
-    uhmWordCount: 1,
-    ahWordCount: 1,
+    likeWordCount: 10,
+    uhmWordCount: 5,
+    ahWordCount: 10,
     totalWordCount: 100,
     audioFileURI:
-      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a'
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 1
   },
   {
-    date: 2019 - 11 - 26,
-    questionCount: 20,
+    date: '2019-11-15 13:01:28.22-05',
+    questionCount: 11,
     likeWordCount: 2,
-    uhmWordCount: 2,
-    ahWordCount: 2,
-    totalWordCount: 200,
+    uhmWordCount: 1,
+    ahWordCount: 12,
+    totalWordCount: 110,
     audioFileURI:
-      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a'
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 2
   },
   {
-    date: 2019 - 11 - 27,
-    questionCount: 30,
+    date: '2019-11-16 13:01:28.22-05',
+    questionCount: 12,
     likeWordCount: 3,
     uhmWordCount: 3,
-    ahWordCount: 3,
-    totalWordCount: 300,
+    ahWordCount: 13,
+    totalWordCount: 120,
     audioFileURI:
-      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a'
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 3
   },
   {
-    date: 2019 - 11 - 27,
-    questionCount: 40,
-    likeWordCount: 4,
+    date: '2019-11-17 13:01:28.22-05',
+    questionCount: 13,
+    likeWordCount: 10,
     uhmWordCount: 4,
     ahWordCount: 4,
-    totalWordCount: 400,
+    totalWordCount: 130,
     audioFileURI:
-      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a'
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 4
   },
   {
-    date: 2019 - 11 - 28,
-    questionCount: 50,
+    date: '2019-11-18 13:01:28.22-05',
+    questionCount: 14,
+    likeWordCount: 7,
+    uhmWordCount: 2,
+    ahWordCount: 5,
+    totalWordCount: 140,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 5
+  },
+  {
+    date: '2019-11-19 13:01:28.22-05',
+    questionCount: 15,
+    likeWordCount: 1,
+    uhmWordCount: 5,
+    ahWordCount: 10,
+    totalWordCount: 150,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 6
+  },
+  {
+    date: '2019-11-20 13:01:28.22-05',
+    questionCount: 14,
+    likeWordCount: 2,
+    uhmWordCount: 15,
+    ahWordCount: 5,
+    totalWordCount: 140,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 7
+  },
+  {
+    date: '2019-11-21 13:01:28.22-05',
+    questionCount: 13,
+    likeWordCount: 3,
+    uhmWordCount: 5,
+    ahWordCount: 1,
+    totalWordCount: 130,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 8
+  },
+  {
+    date: '2019-11-22 13:01:28.22-05',
+    questionCount: 12,
+    likeWordCount: 5,
+    uhmWordCount: 2,
+    ahWordCount: 5,
+    totalWordCount: 120,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 9
+  },
+  {
+    date: '2019-11-23 13:01:28.22-05',
+    questionCount: 11,
+    likeWordCount: 5,
+    uhmWordCount: 5,
+    ahWordCount: 3,
+    totalWordCount: 110,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 10
+  },
+  {
+    date: '2019-11-24 13:01:28.22-05',
+    questionCount: 10,
+    likeWordCount: 5,
+    uhmWordCount: 2,
+    ahWordCount: 5,
+    totalWordCount: 100,
+    audioFileURI:
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 1
+  },
+  {
+    date: '2019-11-25 13:01:28.22-05',
+    questionCount: 5,
     likeWordCount: 5,
     uhmWordCount: 5,
     ahWordCount: 5,
-    totalWordCount: 500,
+    totalWordCount: 100,
     audioFileURI:
-      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a'
+      'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    userId: 1
   }
 ]
 
@@ -137,6 +219,39 @@ const questions = [
   },
   {
     content: 'If you could be any animal which would you be?'
+  },
+  {
+    content: 'Tell me about a time you had to make a controversial decision.'
+  },
+  {
+    content: 'Tell me about a time when you had to build or motivate a team.'
+  },
+  {
+    content: 'Tell me about a situation when your work was criticized.'
+  },
+  {
+    content: 'Tell me about a time when you influenced a team.'
+  },
+  {
+    content: 'Tell me about a time when you had to make a tough decision.'
+  },
+  {
+    content:
+      'If I called up your teammates, how do you think they would describe you?'
+  },
+  {
+    content: 'What was the toughest challenge you have ever faced?'
+  },
+  {
+    content: 'Tell me about a time when you disagreed with someone.'
+  },
+  {
+    content:
+      'Tell me about a mistake you made. What happened, and what did you learn from it?'
+  },
+  {
+    content:
+      'Tell me about a time you had to use emotional intelligence to lead.'
   }
 ]
 
