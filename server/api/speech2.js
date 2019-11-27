@@ -44,6 +44,6 @@ router.post('/', async (req, res, next) => {
 
     res.send(transcription)
   } catch (error) {
-    console.log(error)
+    res.send(error)
   }
 })
