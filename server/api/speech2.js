@@ -6,7 +6,7 @@ const speech = require('@google-cloud/speech')
 const router = require('express').Router()
 module.exports = router
 
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
     const data = req.body
 
@@ -37,6 +37,7 @@ router.get('/', async (req, res, next) => {
       .map(result => result.alternatives[0].transcript)
       .join('\n')
     console.log(`Transcription: ${transcription}`)
+
     res.send(transcription)
   } catch (error) {
     console.log(error)
