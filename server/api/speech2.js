@@ -12,18 +12,14 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const data = req.body
-
-    // Creates a client
+    // Creates a client for google
     const client = new speech.SpeechClient()
 
-    const file = fs.readlinkSync(data.uri1)
-
-    const audioBytes = file.toString('base64')
-
+    //req.body should be in base64 for google to accept
     const audio = {
-      content: audioBytes
+      content: req.body
     }
+
     const config = {
       encoding: 'LINEAR16',
       sampleRateHertz: 16000,
@@ -43,6 +39,7 @@ router.post('/', async (req, res, next) => {
     console.log(`Transcription: ${transcription}`)
 
     res.send(transcription)
+    // res.send(file)
   } catch (error) {
     res.send(error)
   }
