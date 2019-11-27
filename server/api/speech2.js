@@ -6,6 +6,10 @@ const speech = require('@google-cloud/speech')
 const router = require('express').Router()
 module.exports = router
 
+router.get('/', async (req, res, next) => {
+  res.send('hello nothing to see - make a post request!')
+})
+
 router.post('/', async (req, res, next) => {
   try {
     const data = req.body
