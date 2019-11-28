@@ -43,6 +43,7 @@ router.post('/', async (req, res, next) => {
     res.send(transcription)
     // res.send(file)
   } catch (error) {
-    res.send(error)
+    console.log('error: ', error)
+    res.status(500).send(error)
   }
 })
