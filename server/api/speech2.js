@@ -34,11 +34,11 @@ router.post('/', async (req, res, next) => {
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
-    console.log(`response: ${response}`)
+    console.log('google response: ', response)
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
       .join('\n')
-    console.log(`Transcription: ${transcription}`)
+    console.log('Transcription: ', transcription)
 
     res.send(transcription)
     // res.send(file)
