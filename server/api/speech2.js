@@ -12,6 +12,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
+    console.log('hello!')
     // Creates a client for google
     const client = new speech.SpeechClient()
 
@@ -33,6 +34,7 @@ router.post('/', async (req, res, next) => {
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
+    console.log(`response: ${response}`)
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
       .join('\n')
