@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
 
     //req.body should be in base64 for google to accept
     const audio = {
-      content: req.body.string
+      content: req.body
     }
 
     const config = {
@@ -34,16 +34,12 @@ router.post('/', async (req, res, next) => {
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
-    console.log('google response: ', response)
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
       .join('\n')
-    console.log('Transcription: ', transcription)
-
     res.send(transcription)
     // res.send(file)
   } catch (error) {
-    console.log('error: ', error)
     res.status(500).send(error)
   }
 })

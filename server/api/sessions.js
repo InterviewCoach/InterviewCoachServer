@@ -14,7 +14,8 @@ router.get('/', async (req, res, next) => {
         'uhmWordCount',
         'ahWordCount',
         'totalWordCount',
-        'audioFileURI'
+        'audioFileURI',
+        'userId'
       ]
     })
     res.json(sessions)
@@ -35,7 +36,8 @@ router.get('/:id', async (req, res, next) => {
         'uhmWordCount',
         'ahWordCount',
         'totalWordCount',
-        'audioFileURI'
+        'audioFileURI',
+        'userId'
       ],
       where: {
         id: req.params.id
