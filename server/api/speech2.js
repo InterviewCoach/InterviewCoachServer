@@ -12,6 +12,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
+    console.log('hello!')
     // Creates a client for google
     const client = new speech.SpeechClient()
 
@@ -21,8 +22,8 @@ router.post('/', async (req, res, next) => {
     }
 
     const config = {
-      encoding: 'LINEAR16',
-      sampleRateHertz: 16000,
+      encoding: 'AMR',
+      sampleRateHertz: 8000,
       languageCode: 'en-US'
     }
 
@@ -36,11 +37,9 @@ router.post('/', async (req, res, next) => {
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
       .join('\n')
-    console.log(`Transcription: ${transcription}`)
-
     res.send(transcription)
     // res.send(file)
   } catch (error) {
-    res.send(error)
+    res.status(500).send(error)
   }
 })
