@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
 
     //req.body should be in base64 for google to accept
     const audio = {
-      content: req.body
+      content: req.body.string
     }
 
     const config = {
