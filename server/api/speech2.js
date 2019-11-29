@@ -31,6 +31,7 @@ router.post('/', async (req, res, next) => {
       audio: audio,
       config: config
     }
+    console.log(request)
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
