@@ -22,8 +22,8 @@ router.post('/', async (req, res, next) => {
     }
 
     const config = {
-      encoding: 'LINEAR16',
-      sampleRateHertz: 16000,
+      encoding: 'AMR',
+      sampleRateHertz: 8000,
       languageCode: 'en-US'
     }
 
