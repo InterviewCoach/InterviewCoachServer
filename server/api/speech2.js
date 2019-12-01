@@ -1,18 +1,16 @@
-// const Hapi = require('@hapi/hapi')
 const fs = require('fs')
 const speech = require('@google-cloud/speech')
-// const ffmpeg = require('fluent-ffmpeg')
+const toxicity = require('@tensorflow-models/toxicity')
 
 const router = require('express').Router()
 module.exports = router
 
 router.get('/', async (req, res, next) => {
-  res.send('hello nothing to see - make a post request!')
+  res.send('nothing to see here --- make a post request!')
 })
 
 router.post('/', async (req, res, next) => {
   try {
-    console.log('hello!')
     // Creates a client for google
     const client = new speech.SpeechClient()
 
@@ -37,7 +35,19 @@ router.post('/', async (req, res, next) => {
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
       .join('\n')
-    res.send(transcription)
+
+    //get toxicity labels
+    const model = await toxicity.load(0.9)
+    const predictions = await model.classify(transcription)
+
+    //loop through all labels, filter out the ones that are a match
+    const toxicity = predictions
+      .filter(prediction => {
+        return prediction.results[0].match
+      })
+      .map(prediction => prediction.label)
+
+    res.send({transcription, toxicity})
     // res.send(file)
   } catch (error) {
     res.status(500).send(error)
