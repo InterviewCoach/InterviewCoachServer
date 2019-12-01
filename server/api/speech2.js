@@ -1,6 +1,6 @@
 const fs = require('fs')
 const speech = require('@google-cloud/speech')
-const toxicity = require('@tensorflow-models/toxicity')
+// const toxicity = require('@tensorflow-models/toxicity')
 
 const router = require('express').Router()
 module.exports = router
@@ -37,17 +37,18 @@ router.post('/', async (req, res, next) => {
       .join('\n')
 
     //get toxicity labels
-    const model = await toxicity.load(0.9)
-    const predictions = await model.classify(transcription)
+    //const model = await toxicity.load(0.9)
+    //const predictions = await model.classify(transcription)
 
     //loop through all labels, filter out the ones that are a match
-    const toxicity = predictions
-      .filter(prediction => {
-        return prediction.results[0].match
-      })
-      .map(prediction => prediction.label)
+//     const toxicity = predictions
+//       .filter(prediction => {
+//         return prediction.results[0].match
+//       })
+//       .map(prediction => prediction.label)
 
-    res.send({transcription, toxicity})
+//     res.send({transcription, toxicity})
+    res.send(transcription)
   } catch (error) {
     res.status(500).send(error)
   }
