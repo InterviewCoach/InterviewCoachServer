@@ -9,12 +9,12 @@ router.get('/', async (req, res, next) => {
   res.send('nothing to see here --- make a post request!')
 })
 
+// route gets transcription of audio file
 router.post('/', async (req, res, next) => {
   try {
     // Creates a client for google
     const client = new speech.SpeechClient()
 
-    //req.body should be in base64 for google to accept
     const audio = {
       content: req.body
     }
@@ -48,7 +48,6 @@ router.post('/', async (req, res, next) => {
       .map(prediction => prediction.label)
 
     res.send({transcription, toxicity})
-    // res.send(file)
   } catch (error) {
     res.status(500).send(error)
   }
