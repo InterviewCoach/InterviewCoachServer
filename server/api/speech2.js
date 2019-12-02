@@ -32,21 +32,22 @@ router.post('/', async (req, res, next) => {
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
-    const transcription = response.results
-      .map(result => result.alternatives[0].transcript)
+    const transcription = response.results.map(
+      result => result.alternatives[0].transcript
+    )
     console.log('Transcription: ', transcription)
     //get toxicity labels
     //const model = await toxicity.load(0.9)
     //const predictions = await model.classify(transcription)
 
     //loop through all labels, filter out the ones that are a match
-//     const toxicity = predictions
-//       .filter(prediction => {
-//         return prediction.results[0].match
-//       })
-//       .map(prediction => prediction.label)
+    //     const toxicity = predictions
+    //       .filter(prediction => {
+    //         return prediction.results[0].match
+    //       })
+    //       .map(prediction => prediction.label)
 
-//     res.send({transcription, toxicity})
+    //     res.send({transcription, toxicity})
     res.json(transcription)
     // res.send(file)
   } catch (error) {
