@@ -34,8 +34,6 @@ router.post('/', async (req, res, next) => {
     const [response] = await client.recognize(request)
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
-      .join('\n')
-
     //get toxicity labels
     //const model = await toxicity.load(0.9)
     //const predictions = await model.classify(transcription)
@@ -48,7 +46,8 @@ router.post('/', async (req, res, next) => {
 //       .map(prediction => prediction.label)
 
 //     res.send({transcription, toxicity})
-    res.send(transcription)
+    res.json(transcription)
+    // res.send(file)
   } catch (error) {
     res.status(500).send(error)
   }
