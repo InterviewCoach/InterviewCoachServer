@@ -1,0 +1,15 @@
+{
+  "type": "service_account",
+  "project_id": "defenseagainst-the-darkarts-ss",
+  "private_key_id": "135b647948bd26659113e9d0ff3988addabd5010",
+  "private_key":
+    "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAkpGJyA5QXtJx\nqdXVB8t6UcGh4YXFVKaCKEQdVsWj7IzebfEeUep1r54RCXwvqOG9jLUuo9bIbNod\niqkVZn2J+5uY/Db4/pQSZRslDsvfrD9IYqXqnSCZUhc9OIqZhkyokmflrtlwt2n7\ns4EKfJjSn1MuzWGTCHVM2cmYsirOP+gI+ulHhKBsr49XNGruraVymTDICi0hpj3m\nf74xngU0JLCgC+SPMQ4WStOhtIMOPIefCe5WzSpG+B9IM1wCQsyGHJnY5ZbV3lUp\nOLD7OmGOlf8j5lS4d1eKIZ+CMn2rAHCtddd+0t/+DQEy8uw7m2kaTaIIZXIi1cbp\nyHa+fTqNAgMBAAECggEADYoQjPshlIGCMsch12M/qWc3obnRNa1MsrCBj32DElIm\nmlno/rx8K0+QYbrEvjYVvwW2VGPlDTzn/fU6i5xj3bBwwWoUNF/zybJNnQakC2MZ\nJO34o9ztxpHYu+9ugTpJx/1ZLDMlqxDeNPnrK/FULlTQ3KTIhDWvR5q1W5TFQTBq\nUA3AtH/W7Ioi4tcTm/3nErrP+CuEPjuD2cq400WhOQpXe6sl5IFTixcqdP77ZqBl\n6/MSMUt0J+cDTLDCBszFEpwSPbL/Toga7uDaaG02foICiFFIQh7Jdfal3eYnl7FH\nsZqicMuqZoM7Qt3+0F2K0hHgI6NHguNmqBb9kUd+aQKBgQDn0hmmcj048K1PmAHw\nEOCbd03MLzqfEZMWwnJPuKZZCgUcQq3MW4X6iCr3ziNJd9FsWMb2lrkiOnSVvjC+\n3hghH4Cgbs+BQlBR6R3fkI3IJZytNVAw5YPCt+IEtpmZbUGhDC/MBBJvf/vyMD3H\n4SNAUGlgHYIsQBqtuLe28JW1+QKBgQDUqH5aOSELmOVZSo3VvhcYTvG89ru5sLG2\nYa1AzcCZshz+qV1JGUeYmEQixAc1lNF/kO7GVqJDnZwKkAVvbWBcLlWXAVE9bJXV\no0LKWF/16qzXaDp2zmEYvr3JoOnFe++1e3KgzAq5ZzX52eZCdcGx1N4Qoub8tKnt\npey5gt5+NQKBgHVH8fonaZnZCZVvDevqXffJT+6xJjM7rPKixTpX7LC3RQabJVpy\nI0Iwiax8+ZU9rRHniCFQ97C9aiYn5nlp20NGsMh5xzlZ11DZY2ertk8/2Bg5FKzo\nMNTeOtavmt3oTH+xrqzEkp8eXNSWW2s4F6F+DRG3XBgPBnBFN4yyAsvhAoGBAJ+G\nDdKMjHdwqItE3AT85cI8ZibER6pSG92ehCLataIV9J4sWmgdaJHVlzclKetNyaIS\nDKwIDQz/zDA4PXuK5v//WgE+4bxcGkH6iH3VsZZ+Bk5IR6MbycaQPzpjVTnpcLYI\n9sIcjebqv5i/lnVAdJ57+mEscm4a8GXvVBcNTu4JAoGALQKoFg5v25MFSwD7NF3O\nv6Gi5cjRlmAScIpmUhZHpV+21Zcy5ou0eZg5FdSAIcGOIpLBuBj3f+RlQjHGASkQ\nAiG7GW9jW4PdGQABCx25lp9qRBy+shdNQ8py+zJIXTZqwOpeh7oSdXEWiZuTlNzk\nP+iBZP7UX5Py0qyJdB8hh10=\n-----END PRIVATE KEY-----\n",
+  "client_email":
+    "svetalik@defenseagainst-the-darkarts-ss.iam.gserviceaccount.com",
+  "client_id": "104843350139993422434",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url":
+    "https://www.googleapis.com/robot/v1/metadata/x509/svetalik%40defenseagainst-the-darkarts-ss.iam.gserviceaccount.com"
+}
