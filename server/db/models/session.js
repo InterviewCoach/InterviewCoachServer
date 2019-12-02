@@ -19,13 +19,13 @@ const Session = db.define('session', {
       min: 0
     }
   },
-  uhmWordCount: {
+  actuallyWordCount: {
     type: Sequelize.INTEGER,
     validate: {
       min: 0
     }
   },
-  ahWordCount: {
+  basicallyWordCount: {
     type: Sequelize.INTEGER,
     validate: {
       min: 0
@@ -40,6 +40,13 @@ const Session = db.define('session', {
   audioFileURI: {
     type: Sequelize.STRING
     // type: Sequelize.varbinary(50), //the column data entries exceed 8,000 bytes.
+  },
+  content: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   }
 })
 
