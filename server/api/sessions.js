@@ -11,10 +11,12 @@ router.get('/', async (req, res, next) => {
         'date',
         'questionCount',
         'likeWordCount',
-        'uhmWordCount',
-        'ahWordCount',
+        'actuallyWordCount',
+        'basicallyWordCount',
         'totalWordCount',
-        'audioFileURI'
+        'audioFileURI',
+        'content',
+        'userId'
       ]
     })
     res.json(sessions)
@@ -32,10 +34,12 @@ router.get('/:id', async (req, res, next) => {
         'date',
         'questionCount',
         'likeWordCount',
-        'uhmWordCount',
-        'ahWordCount',
+        'actuallyWordCount',
+        'basicallyWordCount',
         'totalWordCount',
-        'audioFileURI'
+        'audioFileURI',
+        'content',
+        'userId'
       ],
       where: {
         id: req.params.id
@@ -58,10 +62,12 @@ router.post('/', async (req, res, next) => {
       date: req.body.date,
       questionCount: req.body.questionCount,
       likeWordCount: req.body.likeWordCount,
-      uhmWordCount: req.body.uhmWordCount,
-      ahWordCount: req.body.ahWordCount,
+      actuallyWordCount: req.body.actuallyWordCount,
+      basicallyWordCount: req.body.basicallyWordCount,
       totalWordCount: req.body.totalWordCount,
-      audioFileURI: req.body.audioFileURI
+      audioFileURI: req.body.audioFileURI,
+      content: req.body.content,
+      userId: req.body.userId
     })
     res.json(newSession)
   } catch (err) {
