@@ -16,7 +16,7 @@ router.post('/', async (req, res, next) => {
     const client = new speech.SpeechClient()
 
     const audio = {
-      content: req.body
+      content: req.body.string
     }
 
     const config = {
@@ -34,6 +34,7 @@ router.post('/', async (req, res, next) => {
     const [response] = await client.recognize(request)
     const transcription = response.results
       .map(result => result.alternatives[0].transcript)
+    console.log('Transcription: ', transcription)
     //get toxicity labels
     //const model = await toxicity.load(0.9)
     //const predictions = await model.classify(transcription)
@@ -49,6 +50,7 @@ router.post('/', async (req, res, next) => {
     res.json(transcription)
     // res.send(file)
   } catch (error) {
+    console.error('error: ', error)
     res.status(500).send(error)
   }
 })
