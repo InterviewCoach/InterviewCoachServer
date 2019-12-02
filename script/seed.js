@@ -73,132 +73,156 @@ const sessions = [
     date: '2019-11-14 13:01:28.22-05',
     questionCount: 10,
     likeWordCount: 10,
-    uhmWordCount: 5,
-    ahWordCount: 10,
+    actuallyWordCount: 5,
+    basicallyWordCount: 10,
     totalWordCount: 100,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 1
   },
   {
     date: '2019-11-15 13:01:28.22-05',
     questionCount: 11,
     likeWordCount: 2,
-    uhmWordCount: 1,
-    ahWordCount: 12,
+    actuallyWordCount: 1,
+    basicallyWordCount: 12,
     totalWordCount: 110,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 2
   },
   {
     date: '2019-11-16 13:01:28.22-05',
     questionCount: 12,
     likeWordCount: 3,
-    uhmWordCount: 3,
-    ahWordCount: 13,
+    actuallyWordCount: 3,
+    basicallyWordCount: 13,
     totalWordCount: 120,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 3
   },
   {
     date: '2019-11-17 13:01:28.22-05',
     questionCount: 13,
     likeWordCount: 10,
-    uhmWordCount: 4,
-    ahWordCount: 4,
+    actuallyWordCount: 4,
+    basicallyWordCount: 4,
     totalWordCount: 130,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 4
   },
   {
     date: '2019-11-18 13:01:28.22-05',
     questionCount: 14,
     likeWordCount: 7,
-    uhmWordCount: 2,
-    ahWordCount: 5,
+    actuallyWordCount: 2,
+    basicallyWordCount: 5,
     totalWordCount: 140,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 5
   },
   {
     date: '2019-11-19 13:01:28.22-05',
     questionCount: 15,
     likeWordCount: 1,
-    uhmWordCount: 5,
-    ahWordCount: 10,
+    actuallyWordCount: 5,
+    basicallyWordCount: 10,
     totalWordCount: 150,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 6
   },
   {
     date: '2019-11-20 13:01:28.22-05',
     questionCount: 14,
     likeWordCount: 2,
-    uhmWordCount: 15,
-    ahWordCount: 5,
+    actuallyWordCount: 15,
+    basicallyWordCount: 5,
     totalWordCount: 140,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 7
   },
   {
     date: '2019-11-21 13:01:28.22-05',
     questionCount: 13,
     likeWordCount: 3,
-    uhmWordCount: 5,
-    ahWordCount: 1,
+    actuallyWordCount: 5,
+    basicallyWordCount: 1,
     totalWordCount: 130,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 8
   },
   {
     date: '2019-11-22 13:01:28.22-05',
     questionCount: 12,
     likeWordCount: 5,
-    uhmWordCount: 2,
-    ahWordCount: 5,
+    actuallyWordCount: 2,
+    basicallyWordCount: 5,
     totalWordCount: 120,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 9
   },
   {
     date: '2019-11-23 13:01:28.22-05',
     questionCount: 11,
     likeWordCount: 5,
-    uhmWordCount: 5,
-    ahWordCount: 3,
+    actuallyWordCount: 5,
+    basicallyWordCount: 3,
     totalWordCount: 110,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 10
   },
   {
     date: '2019-11-24 13:01:28.22-05',
     questionCount: 10,
     likeWordCount: 5,
-    uhmWordCount: 2,
-    ahWordCount: 5,
+    actuallyWordCount: 2,
+    basicallyWordCount: 5,
     totalWordCount: 100,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 1
   },
   {
     date: '2019-11-25 13:01:28.22-05',
     questionCount: 5,
     likeWordCount: 5,
-    uhmWordCount: 5,
-    ahWordCount: 5,
+    actuallyWordCount: 5,
+    basicallyWordCount: 5,
     totalWordCount: 100,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
+    content:
+      'What is something you have accomplished that you are proud of? I am basically proud of like a lot of things that I have actually done.',
     userId: 1
   }
 ]
