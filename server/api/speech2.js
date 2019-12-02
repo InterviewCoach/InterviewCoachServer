@@ -46,13 +46,8 @@ router.post('/', async (req, res, next) => {
 
 router.post('/toxicity', async (req, res, next) => {
   try {
-    //grab data and put it in correct format for model
-    const data = req.body.data
-    const transcription = []
-    data.forEach(string => {
-      const array = string.split(' ')
-      array.forEach(word => transcription.push(word))
-    })
+    //grab data
+    const transcription = req.body.data.concat([])
 
     //if there is no transcript, just return
     if (!transcription || !transcription.length) res.json([])
@@ -64,7 +59,9 @@ router.post('/toxicity', async (req, res, next) => {
       // loop through all labels, filter out the ones that are a match
       const labels = predictions
         .filter(prediction => {
-          return prediction.results[0].match || prediction.results[1].match
+          let bool = false
+          prediction.results.forEach(result => (bool = bool || result.match))
+          if (bool) return prediction
         })
         .map(prediction => prediction.label)
 
