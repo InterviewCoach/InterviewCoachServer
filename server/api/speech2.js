@@ -46,12 +46,12 @@ router.post('/', async (req, res, next) => {
 
 router.post('/toxicity', async (req, res, next) => {
   try {
-    //grab data
-    const transcription = req.body.data.concat([])
-
-    //if there is no transcript, just return
-    if (!transcription || !transcription.length) res.json([])
+    //if no data, return an empty object
+    if (!req.body.data) res.json({})
     else {
+      //grab data
+      const transcription = req.body.data.concat([])
+
       //get toxicity labels
       const model = await toxicity.load(0.9)
       const predictions = await model.classify(transcription)
