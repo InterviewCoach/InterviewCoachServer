@@ -5,12 +5,8 @@ const toxicity = require('@tensorflow-models/toxicity')
 const router = require('express').Router()
 module.exports = router
 
-router.get('/', async (req, res, next) => {
-  res.send('nothing to see here --- make a post request!')
-})
-
 // route gets transcription of audio file
-router.post('/', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     // Creates a client for google
     const client = new speech.SpeechClient()

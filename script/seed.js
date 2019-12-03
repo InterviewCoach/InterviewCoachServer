@@ -4,6 +4,7 @@ const db = require('../server/db')
 const User = require('../server/db/models/user')
 const Session = require('../server/db/models/session')
 const Question = require('../server/db/models/question')
+const Toxicity = require('../server/db/models/toxicity')
 
 const users = [
   {
@@ -72,10 +73,6 @@ const sessions = [
   {
     date: '2019-11-14 13:01:28.22-05',
     questionCount: 10,
-    likeWordCount: 10,
-    actuallyWordCount: 5,
-    basicallyWordCount: 10,
-    totalWordCount: 100,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -85,10 +82,6 @@ const sessions = [
   {
     date: '2019-11-15 13:01:28.22-05',
     questionCount: 11,
-    likeWordCount: 2,
-    actuallyWordCount: 1,
-    basicallyWordCount: 12,
-    totalWordCount: 110,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -98,10 +91,6 @@ const sessions = [
   {
     date: '2019-11-16 13:01:28.22-05',
     questionCount: 12,
-    likeWordCount: 3,
-    actuallyWordCount: 3,
-    basicallyWordCount: 13,
-    totalWordCount: 120,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -111,10 +100,6 @@ const sessions = [
   {
     date: '2019-11-17 13:01:28.22-05',
     questionCount: 13,
-    likeWordCount: 10,
-    actuallyWordCount: 4,
-    basicallyWordCount: 4,
-    totalWordCount: 130,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -124,10 +109,6 @@ const sessions = [
   {
     date: '2019-11-18 13:01:28.22-05',
     questionCount: 14,
-    likeWordCount: 7,
-    actuallyWordCount: 2,
-    basicallyWordCount: 5,
-    totalWordCount: 140,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -137,10 +118,6 @@ const sessions = [
   {
     date: '2019-11-19 13:01:28.22-05',
     questionCount: 15,
-    likeWordCount: 1,
-    actuallyWordCount: 5,
-    basicallyWordCount: 10,
-    totalWordCount: 150,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -150,10 +127,6 @@ const sessions = [
   {
     date: '2019-11-20 13:01:28.22-05',
     questionCount: 14,
-    likeWordCount: 2,
-    actuallyWordCount: 15,
-    basicallyWordCount: 5,
-    totalWordCount: 140,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -163,10 +136,6 @@ const sessions = [
   {
     date: '2019-11-21 13:01:28.22-05',
     questionCount: 13,
-    likeWordCount: 3,
-    actuallyWordCount: 5,
-    basicallyWordCount: 1,
-    totalWordCount: 130,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -176,10 +145,6 @@ const sessions = [
   {
     date: '2019-11-22 13:01:28.22-05',
     questionCount: 12,
-    likeWordCount: 5,
-    actuallyWordCount: 2,
-    basicallyWordCount: 5,
-    totalWordCount: 120,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -189,10 +154,6 @@ const sessions = [
   {
     date: '2019-11-23 13:01:28.22-05',
     questionCount: 11,
-    likeWordCount: 5,
-    actuallyWordCount: 5,
-    basicallyWordCount: 3,
-    totalWordCount: 110,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -202,9 +163,6 @@ const sessions = [
   {
     date: '2019-11-24 13:01:28.22-05',
     questionCount: 10,
-    likeWordCount: 5,
-    actuallyWordCount: 2,
-    basicallyWordCount: 5,
     totalWordCount: 100,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
@@ -215,10 +173,6 @@ const sessions = [
   {
     date: '2019-11-25 13:01:28.22-05',
     questionCount: 5,
-    likeWordCount: 5,
-    actuallyWordCount: 5,
-    basicallyWordCount: 5,
-    totalWordCount: 100,
     audioFileURI:
       'file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FInterviewCoach-6d7ebd27-f831-43f9-b667-73bf8a9d7fde/Audio/recording-59b721d0-4966-43c9-b657-ced21177d5ae.m4a',
     content:
@@ -278,6 +232,31 @@ const questions = [
   }
 ]
 
+// to-do: add all 6 labels
+const toxicities = [
+  {
+    label: 'insult'
+  },
+  {
+    label: 'toxicity'
+  },
+  {
+    label: 'identity_attack'
+  },
+  {
+    label: 'obscene'
+  },
+  {
+    label: 'severe_toxicity'
+  },
+  {
+    label: 'sexual_explicit'
+  },
+  {
+    label: 'threat'
+  }
+]
+
 // seed your database here!
 
 const seed = async () => {
@@ -301,6 +280,12 @@ const seed = async () => {
       return Question.create(question)
     })
   )
+
+  // await Promise.all(
+  //   toxicities.map(toxicity => {
+  //     return Toxicity.create(toxicity)
+  //   })
+  // )
   console.log('Seeding success!')
 }
 
