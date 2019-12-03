@@ -81,9 +81,12 @@ router.post('/', async (req, res, next) => {
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
+    console.log('>>> response', response)
+
     const transcription = response.results.map(
       result => result.alternatives[0].transcript
     )
+    console.log('>>> transcription', transcription)
 
     const newSession = await Session.create({
       audioFileURI: req.body.audioFileURI,
