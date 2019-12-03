@@ -28,7 +28,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/user/:id', async (req, res, next) => {
   try {
     const singleSession = await Session.findAll({
       attributes: [
@@ -44,9 +44,10 @@ router.get('/:id', async (req, res, next) => {
         'userId'
       ],
       where: {
-        id: req.params.id
+        userId: req.params.id
       }
     })
+
     if (singleSession.length) {
       res.status(200).json(singleSession)
     } else {
