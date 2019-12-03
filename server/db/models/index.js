@@ -1,17 +1,12 @@
 const User = require('./user')
 const Session = require('./session')
 const Question = require('./question')
-
-/**
- * If we had any associations to make, this would be a great place to put them!
- * ex. if we had another model called BlogPost, we might say:
- *
- *    BlogPost.belongsTo(User)
- */
+const Toxicity = require('./toxicity')
 
 Session.belongsTo(User)
 // Session.hasOne(User)
 User.hasMany(Session)
+Session.hasMany(Toxicity)
 
 // Question.belongsToMany(Session, { through: QuestionSession });
 // Session.belongsToMany(Question, { through: QuestionSession });
@@ -28,5 +23,6 @@ User.hasMany(Session)
 module.exports = {
   User,
   Session,
-  Question
+  Question,
+  Toxicity
 }
