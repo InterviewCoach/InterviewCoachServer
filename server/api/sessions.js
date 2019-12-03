@@ -87,9 +87,10 @@ router.post('/', async (req, res, next) => {
 
     const newSession = await Session.create({
       audioFileURI: req.body.audioFileURI,
-      userId: req.body.userId,
+      userId: req.params.id,
       content: transcription.join(' ')
     })
+    console.log('ses', newSession)
     res.json(transcription)
   } catch (err) {
     console.error(err)
@@ -112,5 +113,29 @@ router.delete('/:id', async (req, res, next) => {
   } catch (err) {
     console.error(err)
     next(err)
+  }
+})
+
+router.get('/latest/:num', async (req, res, next) => {
+  try {
+    const sess = await Session.findAll({
+      limit: req.params.num,
+      attributes: [
+        'id',
+        'createdAt',
+        'questionCount',
+        'likeWordCount',
+        'actuallyWordCount',
+        'basicallyWordCount',
+        'totalWordCount',
+        'audioFileURI',
+        'content',
+        'userId'
+      ],
+      order: [['createdAt', 'DESC']]
+    })
+    res.json(sess)
+  } catch (error) {
+    next(error)
   }
 })

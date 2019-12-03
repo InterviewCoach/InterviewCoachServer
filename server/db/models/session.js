@@ -66,25 +66,25 @@ Session.afterCreate(async sessionInstance => {
   })
 })
 
-Session.afterCreate(async sessionInstance => {
-  //grab data
-  const transcription = sessionInstance.content
+// Session.afterCreate(async sessionInstance => {
+//   //grab data
+//   const transcription = sessionInstance.content
 
-  //get toxicity labels
-  const model = await toxicity.load(0.9)
-  const predictions = await model.classify(transcription)
+//   //get toxicity labels
+//   const model = await toxicity.load(0.9)
+//   const predictions = await model.classify(transcription)
 
-  // loop through all labels, filter out the ones that are a match
-  const labels = predictions
-    .filter(prediction => {
-      let bool = false
-      prediction.results.forEach(result => (bool = bool || result.match))
-      if (bool) return prediction
-    })
-    .map(prediction => prediction.label)
+//   // loop through all labels, filter out the ones that are a match
+//   const labels = predictions
+//     .filter(prediction => {
+//       let bool = false
+//       prediction.results.forEach(result => (bool = bool || result.match))
+//       if (bool) return prediction
+//     })
+//     .map(prediction => prediction.label)
 
-  // return labels of toxicity
-  res.json(labels)
-})
+//   // return labels of toxicity
+
+// })
 
 module.exports = Session
