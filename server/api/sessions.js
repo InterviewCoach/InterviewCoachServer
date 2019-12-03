@@ -26,6 +26,37 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/user/:userId', async (req, res, next) => {
+  try {
+    const sessions = await Session.findAll({
+      // explicitly select only certain fields
+      attributes: [
+        'id',
+        'date',
+        'questionCount',
+        'likeWordCount',
+        'actuallyWordCount',
+        'basicallyWordCount',
+        'totalWordCount',
+        'audioFileURI',
+        'content',
+        'userId'
+      ],
+      where: {
+        userId: req.params.userId
+      }
+    })
+    if (sessions.length) {
+      res.status(200).json(sessions)
+    } else {
+      res.status(404).send('No user with that ID!')
+    }
+  } catch (err) {
+    console.error(err)
+    next(err)
+  }
+})
+
 router.get('/:id', async (req, res, next) => {
   try {
     const singleSession = await Session.findAll({
