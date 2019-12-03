@@ -87,9 +87,10 @@ router.post('/', async (req, res, next) => {
 
     const newSession = await Session.create({
       audioFileURI: req.body.audioFileURI,
-      userId: req.params.id,
+      // userId: req.params.id,
       content: transcription.join(' ')
     })
+
     console.log('ses', newSession)
     res.json(transcription)
   } catch (err) {
