@@ -47,6 +47,7 @@ router.post('/', async (req, res, next) => {
     res.json(newUser)
   } catch (err) {
     console.error(err)
+    res.send(err)
     next(err)
   }
 })
