@@ -28,37 +28,6 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/user/:id', async (req, res, next) => {
-  try {
-    const singleSession = await Session.findAll({
-      attributes: [
-        'id',
-        'createdAt',
-        'questionCount',
-        'likeWordCount',
-        'actuallyWordCount',
-        'basicallyWordCount',
-        'totalWordCount',
-        'audioFileURI',
-        'content',
-        'userId'
-      ],
-      where: {
-        userId: req.params.id
-      }
-    })
-
-    if (singleSession.length) {
-      res.status(200).json(singleSession)
-    } else {
-      res.status(404).send('No session with that ID!')
-    }
-  } catch (err) {
-    console.error(err)
-    next(err)
-  }
-})
-
 router.post('/', async (req, res, next) => {
   try {
     // Creates a client for google
@@ -81,20 +50,16 @@ router.post('/', async (req, res, next) => {
 
     // Detects speech in the audio file
     const [response] = await client.recognize(request)
-    console.log('>>> response', response)
 
     const transcription = response.results.map(
       result => result.alternatives[0].transcript
     )
-    console.log('>>> transcription', transcription)
-
     const newSession = await Session.create({
       audioFileURI: req.body.audioFileURI,
-      // userId: req.params.id,
+      userId: req.user.id,
       content: transcription.join(' ')
     })
 
-    console.log('ses', newSession)
     res.json(transcription)
   } catch (err) {
     console.error(err)
@@ -123,6 +88,7 @@ router.delete('/:id', async (req, res, next) => {
 router.get('/latest/:num', async (req, res, next) => {
   try {
     const sess = await Session.findAll({
+      //will return all if no num is sent in
       limit: req.params.num,
       attributes: [
         'id',
@@ -136,9 +102,13 @@ router.get('/latest/:num', async (req, res, next) => {
         'content',
         'userId'
       ],
+      where: {
+        userId: req.user.id
+      },
       order: [['createdAt', 'DESC']]
     })
-    res.json(sess)
+    if (sess) res.status(200).json(sess)
+    else res.status(404).send('No session with that ID!')
   } catch (error) {
     next(error)
   }
